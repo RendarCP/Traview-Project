@@ -1,0 +1,158 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="TraviewMaster.master.cs" Inherits="TraviewMaster"%>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>여행의시작 트레뷰</title>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+      <script src="http://maps.google.com/maps/api/js?sensor=false" 
+          type="text/javascript"></script>
+     <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+<style>
+    /*메뉴 전체적 스타일지정*/
+.navbar {
+    overflow: hidden;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    width:100%;
+}
+ /*A태그 CSS*/
+.navbar a {
+    float: center;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+/*드랍다운 메뉴 제작*/
+.dropdown {
+    float: left;
+    overflow: hidden;
+    margin: 0 auto;
+}
+/*드랍다운 메뉴 제작*/
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0 auto;
+    float: center;
+}
+/*
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: gray;
+}
+    */
+/*드랍다운 메뉴내 컨텐츠 CSS*/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+/*드랍다운 메뉴내 컨텐츠 CSS*/
+.dropdown-content a {
+    float: center;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+/*드랍다운 메뉴내 컨텐츠 마우스가 위로 올라갔을때*/
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+    
+.dropdown:hover .dropdown-content {
+    display: block;
+}    
+/* 로고에 쓰일 CSS*/
+.logo{
+   float: left;
+    }
+/*로그인 화면 오른쪽으로*/
+.loginright{
+   float: right;
+    }
+</style>
+</head>
+<body>
+    <form id="form1" runat="server">
+<div class="navbar">
+    <div class="dropdown"><a class="logo">
+        <asp:ImageButton ID="ibtnLogo" runat="server" ImageUrl="~/image/logo.jpg" OnClick="ibtnLogo_Click" />
+    </a>
+    </div>
+   <div class="dropdown">
+     <button class="dropbtn">
+         <asp:ImageButton ID="ibtntarvelInfo" runat="server" ImageUrl="~/image/여행정보1.jpg" OnClick="ibtntarvelInfo_Click" />
+       </button>
+    <div class="dropdown-content">
+    </div>
+   </div>
+      <div class="dropdown">
+    <button class="dropbtn">
+        <asp:ImageButton ID="ibtnComunity" runat="server" ImageUrl="~/image/커뮤니티1.jpg" OnClick="ibtnComunity_Click" />
+    </button>
+    <div class="dropdown-content">
+      <a href="TraviewPicture.aspx">여행 사진</a>
+      <a href="reviewTippage.aspx">여행후기/팁</a>
+      <a href="TraviewQnA.aspx">Q&A</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">
+        <asp:ImageButton ID="ibtnShcedule" runat="server" ImageUrl="~/image/일정1.jpg" OnClick="ibtnShcedule_Click" />
+    </button>
+  <!--  <div class="dropdown-content">
+      <a href="~/travelinput.aspx">일정 만들기</a>
+      <a href="#">나의 일정</a>
+    </div> -->
+  </div> 
+      <div class="dropdown">
+    <button class="dropbtn">
+        <asp:ImageButton ID="ibtnGuidbook" runat="server" ImageUrl="~/image/가이드북1.jpg" OnClick="ibtnGuidbook_Click" />
+    </button>
+    <div class="dropdown-content">
+    </div>
+  </div>
+      <div class="dropdown">
+    <button class="dropbtn">
+        <asp:ImageButton ID="ibtnEvent" runat="server" ImageUrl="~/image/이벤트네비게이션.jpg" OnClick="ibtnEvent_Click" />
+    </button>
+    <div class="dropdown-content">
+    </div>
+  </div>
+    <div class="loginright">
+        <asp:Label ID="lblLoginInfo" runat="server" Font-Bold="True" Font-Names="맑은 고딕"></asp:Label>
+        <a>
+            <asp:ImageButton ID="ibtnLoginToggle" runat="server" ImageUrl="~/image/로그인.jpg" OnClick="ibtnLogin_Click" /></a>
+        <a>
+            <asp:ImageButton ID="ibtnRegister" runat="server" ImageUrl="~/image/회원가입.jpg" OnClick="ibtnRegister_Click" /></a>
+    </div>
+</div>
+      
+        <div>
+             <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+             </asp:ContentPlaceHolder>
+        </div>
+        <div style="text-align:center">
+          <asp:Label ID="Label1" runat="server" Text="두원공과대학교 컴퓨터공학과 조성욱 박성현<P>TRAVIEW 프로젝트</p>" BackColor="Gray" Font-Bold="True" ForeColor="White" Width="100%"></asp:Label>
+        </div>
+  </form>
+
+</body>
+</html>
