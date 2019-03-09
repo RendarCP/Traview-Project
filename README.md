@@ -6,7 +6,7 @@ Skill
 1. C#(ASP.net)
 2. JavaScript
 3. CSS(BootStrap)
-4. Database(MS.SQL
+4. Database(MS.SQL)
 
 PreView
 =======
